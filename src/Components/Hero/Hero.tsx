@@ -16,47 +16,46 @@ export const Hero: FC<Props> = ({ theme }) => {
     <section className="hero__section" id="home" ref={ref}>
       <div className="container">
         <div className="hero__wrapper">
-          <div
-            className="hero__content"
-            style={{
-              transform: isInView ? 'none' : 'translateX(-100%)',
-              opacity: isInView ? 1 : 0,
-              transition: 'all 1s ease-out 0.5s',
-            }}
-          >
-            <div>
-              <h2>We're Creating Perfect</h2>
-              <h2>Digital Products To</h2>
-              <h2 className="highlight">Promote Your Brand</h2>
+          <div className="hero__content">
+            <div
+              className="hero__title"
+              style={{
+                transform: isInView ? 'none' : 'translateY(-50px)',
+                opacity: isInView ? 1 : 0,
+                transition: 'all 0.8s ease-out 0.3s',
+              }}
+            >
+              <h2>DigiDesk</h2>
+              <h2 className="highlight">Votre Bureau externalisé</h2>
             </div>
-            <p className="description">
-              FutureMedia is a digital marketing agency that helps
-              businesses grow online through services like SEO, social
-              media marketing, and PPC advertising. We're dedicated to
-              innovation and delivering results-driven strategies for
-              our clients.
+            <p 
+              className="description"
+              style={{
+                transform: isInView ? 'none' : 'translateY(30px)',
+                opacity: isInView ? 1 : 0,
+                transition: 'all 0.8s ease-out 0.6s',
+              }}
+            >
+              Libérez votre potentiel avec nos solutions d'appui professionnel modulables. 
+              Entrepreneurs, PME et personnalités publiques : nous gérons votre administratif, 
+              communication, comptabilité, juridique et bien plus. Concentrez-vous sur l'essentiel, 
+              nous nous occupons du reste.
             </p>
-            <div className="hero__btns">
+            <div 
+              className="hero__btns"
+              style={{
+                transform: isInView ? 'none' : 'translateY(30px)',
+                opacity: isInView ? 1 : 0,
+                transition: 'all 0.8s ease-out 0.9s',
+              }}
+            >
               <button className="primary__btn">
-                Get Started Now
+                En savoir plus
               </button>
               <button className="secondary__btn">
-                Discover More
+                Nos services
               </button>
             </div>
-          </div>
-          <div className="hero__img">
-            <img
-              src={
-                theme === '' ? darkThemeHeroImg : lightThemeHeroImg
-              }
-              alt="hero-img"
-              style={{
-                transform: isInView ? 'none' : 'translateX(100%)',
-                opacity: isInView ? 1 : 0,
-                transition: 'all 1s ease-out 0.5s',
-              }}
-            />
           </div>
         </div>
       </div>

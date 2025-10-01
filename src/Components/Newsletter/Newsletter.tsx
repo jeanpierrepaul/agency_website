@@ -5,7 +5,7 @@ export const Newsletter = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <section className="newsletter" ref={ref}>
+    <section className="newsletter" id="contact" ref={ref}>
       <div className="container">
         <div className="newsletter__wrapper">
           <div className="newsletter__content">
@@ -16,10 +16,10 @@ export const Newsletter = () => {
                 transition: 'all 0.5s ease-out 0.2s',
               }}
             >
-              Be in the Know -
+              Contactez-nous -
               <span className="highlight">
                 {' '}
-                Subscribe to Our Newsletter!
+                Parlons de votre projet !
               </span>
             </h2>
             <form
@@ -33,12 +33,12 @@ export const Newsletter = () => {
               <input
                 type="email"
                 className="email-input"
-                placeholder="Email..."
+                placeholder="Votre email..."
               />
               <input
                 type="submit"
                 className="primary__btn"
-                value="Subscribe!"
+                value="Nous contacter"
               />
             </form>
           </div>

@@ -1,39 +1,18 @@
-import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import articleThumbnail from '../../images/article.png';
-import caseStudyThumbnail from '../../images/case-study.png';
-import videoThumbnail from '../../images/video.png';
 import { Post } from './Post';
 import './blog.css';
-
-const blogData = [
-  {
-    title: 'Video',
-    category: 'Marketing',
-    description: 'In this video you gonna learn how ...',
-    thumbnail: videoThumbnail,
-    link: '#',
-  },
-  {
-    title: 'Case Study',
-    category: 'SEO',
-    description:
-      "You've just written an article. And you think it's pretty good. But is it fit to compete with the millions of other articles in Google's index on the same topic? In this post ...",
-    thumbnail: caseStudyThumbnail,
-    link: '#',
-  },
-  {
-    title: 'Article',
-    category: 'Design',
-    description: 'This article will give you a basic ...',
-    thumbnail: articleThumbnail,
-    link: '#',
-  },
-];
+import { useInView } from 'framer-motion';
+import { useData } from '../../context/DataContext';
+import img1 from '../../images/1.jpg';
 
 export const Blog = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const { blogPosts } = useData();
+  
+  // Filtrer uniquement les articles publiés
+  const publishedPosts = blogPosts.filter(post => post.published).slice(0, 3);
+
   return (
     <section id="blog" className="blog" ref={ref}>
       <div
@@ -45,21 +24,21 @@ export const Blog = () => {
         }}
       >
         <div className="blog__top-content">
-          <h6 className="subtitle">Our Blog</h6>
+          <h6 className="subtitle">Notre Blog</h6>
           <h2>
-            Let's have a look at our
-            <span className="highlight"> recent posts</span>
+            Découvrez nos
+            <span className="highlight"> dernières publications</span>
           </h2>
         </div>
         <div className="blog__wrapper">
-          {blogData.map((i, idx) => (
+          {publishedPosts.map((post) => (
             <Post
-              key={`BlogPost-${idx}`}
-              title={i.title}
-              category={i.category}
-              description={i.description}
-              thumbnail={i.thumbnail}
-              link={i.link}
+              key={`BlogPost-${post.id}`}
+              title={post.title}
+              category={post.category}
+              description={post.excerpt}
+              thumbnail={post.image || img1}
+              link="#"
             />
           ))}
         </div>

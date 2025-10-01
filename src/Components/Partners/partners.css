@@ -1,0 +1,96 @@
+/* Container pour le slider */
+.partners__slider-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0;
+    position: relative;
+}
+
+/* Track qui contient tous les logos */
+.partners__slider {
+    display: flex;
+    gap: 80px;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+}
+
+/* Animation de défilement */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+/* Pause au survol */
+.partners__slider:hover {
+    animation-play-state: paused;
+}
+
+/* Chaque logo */
+.partner__logo-item {
+    flex-shrink: 0;
+    width: 280px;
+    height: 200px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.light-theme .partner__logo-item {
+    background: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 30px;
+}
+
+.partner__logo-item:hover {
+    transform: scale(1.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.light-theme .partner__logo-item:hover {
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 15px 40px;
+}
+
+.partner__logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 992px) {
+    .partner__logo-item {
+        width: 220px;
+        height: 160px;
+        padding: 20px;
+    }
+    
+    .partners__slider {
+        gap: 60px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .partner__logo-item {
+        width: 180px;
+        height: 130px;
+        padding: 15px;
+    }
+    
+    .partners__slider {
+        gap: 40px;
+    }
+    
+    .partners__slider-container {
+        padding: 30px 0;
+    }
+}

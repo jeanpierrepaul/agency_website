@@ -1,59 +1,60 @@
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import './footer.css';
+import logo0 from '../../images/logo0.png';
 export const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const year = new Date().getFullYear();
   const quickLinks = [
     {
-      name: 'Solutions',
+      name: 'Services',
       content: [
         {
-          path: '#',
-          display: 'Marketing',
+          path: '#services',
+          display: 'Gestion administrative',
         },
         {
-          path: '#',
-          display: 'Analytics',
+          path: '#services',
+          display: 'Communication',
         },
         {
-          path: '#',
-          display: 'Ecommerce',
+          path: '#services',
+          display: 'Support comptable',
         },
       ],
     },
     {
-      name: 'Support',
+      name: 'Entreprise',
       content: [
         {
-          path: '#',
-          display: 'Pricing',
+          path: '#about',
+          display: 'About Us',
         },
         {
-          path: '#',
-          display: 'Documentation',
+          path: '#services',
+          display: 'Nos services',
         },
         {
-          path: '#',
-          display: 'Guides',
+          path: '#contact',
+          display: 'Contact',
         },
       ],
     },
     {
-      name: 'Company',
+      name: 'Contact',
       content: [
         {
-          path: '#',
-          display: 'About',
+          path: 'tel:+22890081372',
+          display: '(+228) 90 08 13 72',
         },
         {
-          path: '#',
-          display: 'Jobs',
+          path: 'mailto:contact@digidesk.pro',
+          display: 'contact@digidesk.pro',
         },
         {
-          path: '#',
-          display: 'Blog',
+          path: 'https://www.digidesk.pro',
+          display: 'www.digidesk.pro',
         },
       ],
     },
@@ -70,15 +71,37 @@ export const Footer = () => {
               transition: 'all 1s ease-out 0.5s',
             }}
           >
-            <h2>FutureMedia</h2>
-            <p className="description footer__desc">Grow with us</p>
+            <img src={logo0} alt="DigiDesk" className="footer__logo-image" />
+            <p className="description footer__desc">Votre Bureau externalisé</p>
             <p className="small__text description">
-              "Grow with Us" is more than just an invitation to take
-              advantage of our range of services - it's a promise of
-              partnership and growth. At our company, we are dedicated
-              to providing personalized solutions that help businesses
-              and individuals achieve their goals.
+              DigiDesk propose des solutions d'appui professionnel modulables 
+              pour les entrepreneurs, PME et personnalités publiques. 
+              Nous vous accompagnons avec expertise et flexibilité dans tous 
+              vos projets administratifs, juridiques, comptables et stratégiques.
             </p>
+            <p className="small__text description" style={{marginTop: '10px'}}>
+              📍 Lomé – Togo
+            </p>
+            <div className="footer__social-links" style={{marginTop: '15px', display: 'flex', gap: '15px'}}>
+              <a 
+                href="https://wa.me/22890081372" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="footer__social-link"
+                title="WhatsApp"
+              >
+                <i className="ri-whatsapp-line" style={{fontSize: '1.5rem'}} />
+              </a>
+              <a 
+                href="https://twitter.com/digidesk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="footer__social-link"
+                title="X (Twitter)"
+              >
+                <i className="ri-twitter-x-line" style={{fontSize: '1.5rem'}} />
+              </a>
+            </div>
           </div>
           <div
             className="footer__quick-links-wrapper"
@@ -109,7 +132,7 @@ export const Footer = () => {
         </div>
         <p className="copyright">
           Copyright© {year}, developed by{' '}
-          <a href="https://github.com/xroobix">RooB</a>. All rights
+          <a href="https://elitistes.com">ELITISTES</a>. All rights
           reserved.
         </p>
       </div>

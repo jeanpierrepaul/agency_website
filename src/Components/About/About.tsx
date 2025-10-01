@@ -7,21 +7,21 @@ import './about.css';
 const chooseData = [
   {
     icon: 'ri-settings-2-line',
-    title: 'Experience and Expertise',
+    title: 'Solutions Sur-Mesure',
     description:
-      'Our team has over a decade of experience in the industry, and we pride ourselves on staying up-to-date with the latest developments and trends. We have the expertise to deliver high-quality work that meets your specific needs and exceeds your expectations.',
+      'Chaque entreprise est unique. Nous analysons vos besoins réels pour concevoir des solutions parfaitement adaptées à vos enjeux, sans prestations superflues. Efficacité et pertinence garanties.',
   },
   {
     icon: 'ri-team-line',
-    title: 'Personalized Approach',
+    title: 'Expertise Pluridisciplinaire',
     description:
-      'We understand that every client is unique, which is why we take a personalized approach to every project. We take the time to understand your goals, objectives, and challenges, and we work closely with you to develop a customized solution that works for your business.',
+      'Une équipe polyvalente maîtrisant 7 domaines clés : gestion administrative, communication digitale, comptabilité, juridique, assurance, RSE et accompagnement VIP. Votre partenaire de confiance.',
   },
   {
     icon: 'ri-customer-service-2-line',
-    title: '24/7 Hours support',
+    title: 'Flexibilité & Réactivité',
     description:
-      'At our company, we believe that great customer service is essential to building long-term relationships with our clients. We are committed to providing exceptional service, and we always go above and beyond to ensure that our clients are satisfied with our work.',
+      'Formules adaptables (ponctuelle, mensuelle, annuelle) selon vos besoins et budget. Service réactif, accompagnement personnalisé et disponibilité optimale. Votre réussite, notre mission.',
   },
 ];
 
@@ -41,14 +41,13 @@ export const About = () => {
       >
         <div className="about__wrapper">
           <div className="about__content">
-            <h6 className="subtitle">Why choose us</h6>
-            <h2>Specialist in advising clients on</h2>
-            <h2 className="highlight">financial challenges</h2>
+            <h6 className="subtitle">Pourquoi nous choisir ?</h6>
+            <h2>DigiDesk, Votre Bureau externalisé</h2>
+            <h2 className="highlight">pour entrepreneurs et PME</h2>
             <p className="description about__content-desc">
-              At our company, we understand that navigating financial
-              challenges can be daunting. That's why we offer expert
-              advice and guidance to help you make informed decisions
-              and achieve your financial goals.
+              Chaque structure est unique → nous proposons des solutions sur-mesure. 
+              Avec 5+ contrats signés, 2+ clients permanents et 100% de clients accompagnés, 
+              nous mettons notre expertise multi-sectorielle au service de votre réussite.
             </p>
             <div className="choose__us-item-wrapper">
               {chooseData.map((i, idx) => (

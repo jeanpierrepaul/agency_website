@@ -1,29 +1,74 @@
 .hero__section{
     overflow: hidden;
+    background-image: url('../../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero__section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.35) 0%, rgba(30, 41, 59, 0.25) 100%);
+    z-index: 0;
+}
+
+.light-theme .hero__section::before {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hero__section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero__wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.hero__img, .hero__content {
-    width: 50%;
+.hero__content {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
 }
 
-.hero__img img {
-    width: 100%;
+.hero__title {
+    margin-bottom: 30px;
 }
 
 .hero__content h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .hero__content p {
     margin-top: 40px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.light-theme .hero__content p {
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .highlight {
@@ -31,10 +76,13 @@
 }
 
 .hero__btns {
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
+    justify-content: center;
     column-gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .primary__btn, .secondary__btn {
@@ -98,20 +146,20 @@
 }
 
 @media only screen and (max-width:600px) {
-    .hero__wrapper {
-        flex-direction: column-reverse;
+    .hero__section {
+        min-height: 80vh;
     }
+    
     .hero__content h2 {
-        text-align: center;
         font-size: 2rem;
     }
-    .hero__content, .hero__img {
-        width: 100%;
-    }
-    .hero__btns {
-        justify-content: center;
-    }
+    
     .hero__content p {
         margin-top: 20px;
+        font-size: 1rem;
+    }
+    
+    .hero__btns {
+        margin-top: 30px;
     }
 }
