@@ -1,10 +1,10 @@
 import img1 from '../images/1.jpg';
-import img2 from '../images/2.PNG?url';
+import img2 from '../images/2.png';
 import img3 from '../images/3.png';
 import img4 from '../images/4.png';
 import img5 from '../images/5.png';
 import img6 from '../images/6.png';
-import img7 from '../images/7.PNG?url';
+import img7 from '../images/7.png';
 
 export interface ServiceData {
   id: string;
